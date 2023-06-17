@@ -1,2 +1,5 @@
-# Minecraft-bedrock-bot
-A Minecraft bedrock Bot that online 24/7
+# MCPE BOT
+
+Script - GranGuorgeMC
+
+Source Code - [PrismarineJS/bedrock-protocol](https://github.com/PrismarineJS/bedrock-protocol)
