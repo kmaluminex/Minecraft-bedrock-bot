@@ -43,11 +43,37 @@ app.get("/bot", (req, res) => {
           margin: 10px;
         }
       </style>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const statusElement = document.getElementById('bot-status');
+
+          // Update the bot status dynamically
+          function updateBotStatus(status) {
+            statusElement.textContent = status;
+          }
+
+          // Perform an asynchronous request to check the bot status
+          async function checkBotStatus() {
+            try {
+              const response = await fetch('/bot/status'); // Assuming you have a separate route to fetch the bot status
+              const data = await response.json();
+              updateBotStatus(data.status);
+            } catch (error) {
+              console.error('Error fetching bot status:', error);
+              updateBotStatus('Error');
+            }
+          }
+
+          // Call the function initially and set an interval to periodically check the bot status
+          checkBotStatus();
+          setInterval(checkBotStatus, 5000); // Adjust the interval as needed
+        });
+      </script>
     </head>
     <body>
       <h1>Bot is online</h1>
       <div class="video-container">
-       Bot status
+        Bot status: <span id="bot-status"></span>
       </div>
     </body>
     </html>
