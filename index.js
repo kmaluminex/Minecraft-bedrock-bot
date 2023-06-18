@@ -56,3 +56,7 @@ app.get("/bot", (req, res) => {
 
   res.send(htmlResponse);
 });
+
+app.listen(3000, () => {
+  console.log('✅ Web is up');
+});
