@@ -1,3 +1,10 @@
+const express = require("express");
+const app = express();
+
+// Serve static files from the "public" folder
+app.use(express.static("public"));
+
+// Define a route for "/bot"
 app.get("/bot", (req, res) => {
   const bedrock = require('bedrock-protocol') 
   const client = bedrock.createClient({ 
