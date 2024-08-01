@@ -13,9 +13,9 @@ app.get("/bot", (req, res) => {
 	if (!client) { // Only create a new client if it doesn't exist
 		const bedrock = require('bedrock-protocol')
 		client = bedrock.createClient({
-			host: 'MoonLightSMPG2.aternos.me',
-			port: 64319,
-			version: '1.20.0',
+			host: 'KMAsmpuEp4.aternos.me',
+			port: 29019,
+			version: '1.21.03.1',
 			username: botName,
 			offline: true
 		});
